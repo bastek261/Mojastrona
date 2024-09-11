@@ -3,8 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piłkarze - Legia Warszawa</title>
+    <title>Piłkarze Legii Warszawa</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Ogólne style dla strony */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .player-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .player-item {
+            width: 150px; /* Szerokość kontenera */
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .player-item img {
+            width: 150px;  /* Szerokość zdjęcia */
+            height: 195px; /* Wysokość zdjęcia */
+            object-fit: cover; /* Dopasowanie zdjęcia do kontenera */
+            border-radius: 4px;
+        }
+
+        .player-item p {
+            margin: 10px 0 0;
+        }
+
+        /* Ograniczenie liczby elementów w rzędzie do 4 */
+        @media (min-width: 600px) {
+            .player-item {
+                flex: 1 1 calc(25% - 20px); /* 25% szerokości minus odstęp */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,47 +108,169 @@
                 <li><a href="historia.html">Historia</a></li>
                 <li><a href="galeria.html">Galeria Legend</a></li>
                 <li><a href="pilkarze.html">Piłkarze</a></li>
+                <li><a href="mecze.html">Mecze</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h2>Aktualni Piłkarze Legii Warszawa</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Imię i nazwisko</th>
-                    <th>pozycja</th>
-                    <th>wiek</th>
-                    <th>kraj pochodzenia</th>
-                    <th>numer na koszulce</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>kacper tobiasz</td>
-                    <td>bramkarz</td>
-                    <td>21</td>
-                    <td>Polska</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Gabriel Kobylak</td>
-                    <td>bramkarz</td>
-                    <td>22</td>
-                    <td>Polska</td>
-                    <td>27</td>
-                </tr>
-                    <td>Marcel Dudzinski</td>
-                    <td>bramakrz</td>
-                    <td>19</td>
-                    <td>Polska</td>
-                    <td>31</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="section">
+            <h2>Bramkarze</h2>
+            <div class="player-grid">
+                <div class="player-item">
+                    <img src="images/bramkarz1.jpg" alt="Bramkarz 1">
+                    <p>Kacper Tobiasz</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/bramkarz2.jpg" alt="Bramkarz 2">
+                    <p>Marcel Mendes-Dudzińki</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/bramkarz3.jpg" alt="Bramkarz 3">
+                    <p>Gabriel Kobylak</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Obrońcy</h2>
+            <div class="player-grid">
+                <div class="player-item">
+                    <img src="images/obronca1.jpg" alt="Obrońca 1">
+                    <p>Marco Burch</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca2.jpg" alt="Obrońca 2">
+                    <p>Sergio Barcia</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca3.jpg" alt="Obrońca 3">
+                    <p>Radovan Pankov</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca4.jpg" alt="Obrońca 4">
+                    <p>Jan Ziółkowski</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca5.jpg" alt="Obrońca 5">
+                    <p>Rafał Augustyniak</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca6.jpg" alt="Obrońca 6">
+                    <p>Steven Kapuadi</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca7.jpg" alt="Obrońca 7">
+                    <p>Jan Leszczynski</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/obronca8.jpg" alt="Obrońca 8">
+                    <p>Artur Jędrzejczyk</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Pomocnicy</h2>
+            <div class="player-grid">
+                <div class="player-item">
+                    <img src="images/pomocnik1.jpg" alt="Pomocnik 1">
+                    <p>Pomocnik 1</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik2.jpg" alt="Pomocnik 2">
+                    <p>Pomocnik 2</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik3.jpg" alt="Pomocnik 3">
+                    <p>Pomocnik 3</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik4.jpg" alt="Pomocnik 4">
+                    <p>Pomocnik 4</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik5.jpg" alt="Pomocnik 5">
+                    <p>Pomocnik 5</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik6.jpg" alt="Pomocnik 6">
+                    <p>Pomocnik 6</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik7.jpg" alt="Pomocnik 7">
+                    <p>Pomocnik 7</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik8.jpg" alt="Pomocnik 8">
+                    <p>Pomocnik 8</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik9.jpg" alt="Pomocnik 9">
+                    <p>Pomocnik 9</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik10.jpg" alt="Pomocnik 10">
+                    <p>Pomocnik 10</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik11.jpg" alt="Pomocnik 11">
+                    <p>Pomocnik 11</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik12.jpg" alt="Pomocnik 12">
+                    <p>Pomocnik 12</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik13.jpg" alt="Pomocnik 13">
+                    <p>Pomocnik 13</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik14.jpg" alt="Pomocnik 14">
+                    <p>Pomocnik 14</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik15.jpg" alt="Pomocnik 15">
+                    <p>Pomocnik 15</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/pomocnik16.jpg" alt="Pomocnik 16">
+                    <p>Pomocnik 16</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Napastnicy</h2>
+            <div class="player-grid">
+                <div class="player-item">
+                    <img src="images/napastnik1.jpg" alt="Napastnik 1">
+                    <p>Napastnik 1</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/napastnik2.jpg" alt="Napastnik 2">
+                    <p>Napastnik 2</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/napastnik3.jpg" alt="Napastnik 3">
+                    <p>Napastnik 3</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/napastnik4.jpg" alt="Napastnik 4">
+                    <p>Napastnik 4</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/napastnik5.jpg" alt="Napastnik 5">
+                    <p>Napastnik 5</p>
+                </div>
+                <div class="player-item">
+                    <img src="images/napastnik6.jpg" alt="Napastnik 6">
+                    <p>Napastnik 6</p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>Legia Warszawa</p>
+        <p>&copy; 2024 Legia Warszawa</p>
     </footer>
 </body>
 </html>
