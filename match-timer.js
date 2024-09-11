@@ -1,6 +1,6 @@
 <script>
     // Ustaw datę i godzinę najbliższego meczu (format: YYYY-MM-DDTHH:MM:SS)
-    const nextMatchDate = new Date("2024-10-01T20:00:00"); // Przykład daty
+    const nextMatchDate = new Date("2024-09-15T17:30:00"); // Przykład daty
 
     function updateCountdown() {
         const now = new Date();
