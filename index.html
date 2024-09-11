@@ -5,6 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legia Warszawa</title>
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Ogólne style dla strony */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #countdown {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #timer span {
+            display: inline-block;
+            min-width: 50px;
+            padding: 10px;
+            border: 2px solid #333;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,9 +99,51 @@
             <h3>O nas</h3>
             <p>Legia Warszawa to więcej niż klub piłkarski - to społeczność z bogatą historią i tradycją. Poznaj naszą historię, cele i wartości.</p>
         </section>
+        <section>
+            <h2>Odliczanie do najbliższego meczu</h2>
+            <div id="countdown">
+                <p>Do najbliższego meczu zostało:</p>
+                <div id="timer">
+                    <span id="days"></span>d 
+                    <span id="hours"></span>h 
+                    <span id="minutes"></span>m 
+                    <span id="seconds"></span>s
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
-        <!-- Stopka bez treści praw autorskich -->
+        <p>&copy; 2024 Legia Warszawa</p>
     </footer>
+    <script>
+        // Ustaw datę i godzinę najbliższego meczu (format: YYYY-MM-DDTHH:MM:SS)
+        const nextMatchDate = new Date("2024-10-01T20:00:00"); // Przykład daty
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = nextMatchDate - now;
+
+            if (timeDifference <= 0) {
+                document.getElementById('timer').innerHTML = "Mecz już się rozpoczął!";
+                return;
+            }
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Aktualizuj licznik co 1 sekundę
+        setInterval(updateCountdown, 1000);
+
+        // Inicjalna aktualizacja
+        updateCountdown();
+    </script>
 </body>
 </html>
